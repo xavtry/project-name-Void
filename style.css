@@ -1,1 +1,51 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: #0a0a0a; color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  overflow-x: hidden;
+  cursor: none;
+}
+.cursor {
+  position: fixed; width: 20px; height: 20px;
+  background: rgba(0,255,255,0.5); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  mix-blend-mode: difference; transition: transform 0.1s;
+}
 
+/* Glassmorphism */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 4rem;
+}
+
+/* Hero */
+.hero {
+  height: 100vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  background: radial-gradient(circle at center, #1a0033, #000);
+}
+.typing {
+  font-family: 'Orbitron'; font-size: 4rem; margin-bottom: 2rem;
+  border-right: 4px solid #0ff; white-space: nowrap; overflow: hidden;
+  animation: typing 4s steps(50) infinite;
+}
+@keyframes typing { 0%{width:0} 50%{width:100%} 100%{width:0} }
+
+/* WASM Canvas */
+#wasm-canvas {
+  border: 2px solid #0ff; border-radius: 15px; box-shadow: 0 0 30px #0ff;
+}
+
+/* Three.js */
+#three-container {
+  width: 100%; height: 80vh; border-radius: 20px; overflow: hidden;
+}
+
+/* Theme */
+body.light {
+  background: #f0f0f0; color: #000;
+}
+body.light .glass { background: rgba(0,0,0,0.05); }
